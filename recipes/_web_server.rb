@@ -25,3 +25,13 @@ web_app "choique-backend" do
   server_alias node.choique.www.server_alias
   doc_root "#{node.choique.path}/current/web-backend"
 end
+
+template "#{node['php']['conf_dir']}/../apache2/php.ini" do
+  source "php.ini.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  cookbook 'php'
+  notifies :restart, "service[apache2]"
+end
+
