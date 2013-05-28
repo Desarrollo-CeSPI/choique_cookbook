@@ -1,0 +1,11 @@
+all:
+  propel:
+    class:      sfPropelDatabase
+    param:
+      phptype:  mysql
+      port:     3306
+      hostspec: localhost
+      database: <%= node.choique.database.name %>
+      username: <%= node.choique.database.user %>
+      password: <%= node.choique.database.password %>
+#      encoding: utf8

@@ -76,10 +76,22 @@ Vagrant.configure("2") do |config|
         :server_root_password => 'rootpass',
         :server_debian_password => 'debpass',
         :server_repl_password => 'replpass'
+      },
+      :php => {
+        :directives => {
+          :memory_limit => "128M",
+          :post_max_size => "22M",
+          :short_open_tag => "off",
+          :upload_max_filesize => "20M"
+        }
       }
     }
 
     chef.run_list = [
+        "recipe[php::default]",
+        "recipe[apache2::default]",
+        "recipe[mysql::server]",
+        "recipe[database::mysql]",
         "recipe[choique::default]"
     ]
   end

@@ -1,0 +1,17 @@
+cli:
+  controller:
+    class: sfConsoleController
+  request:
+    class: sfConsoleRequest
+  response:
+    class: sfConsoleResponse
+
+test:
+  storage:
+    class: sfSessionTestStorage
+
+all:
+  storage:
+    class: sfSessionStorage
+    param:
+      session_name: <%= node.choique.instance_name.gsub(/\s+/,'-') %>
