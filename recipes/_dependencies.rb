@@ -1,3 +1,4 @@
+include_recipe "apt::default" if platform_family?('ubuntu')
 include_recipe "apache2::mod_php5"
 include_recipe "php::module_gd"
 include_recipe "php::module_apc"
