@@ -6,7 +6,7 @@ Instala un Choique CMS completo, considerando DB mysql, apache y el producto en 
 
 Para probar el producto en forma rápida, sugerimos:
 
-* Instalar "Vagrant":http://www.vagrantup.com/ siguiendo las instrucciones del
+* Instalar [Vagrant](http://www.vagrantup.com/) siguiendo las instrucciones del
   producto
 
 * Instalar el plugin de Berkshelf 
